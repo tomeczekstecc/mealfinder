@@ -10,7 +10,6 @@ function searchMeal(e) {
 
   single_mealEl.innerHTML = '';
   const term = search.value;
-  console.log(term);
 
   if (term.trim()) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`)
@@ -33,8 +32,6 @@ function searchMeal(e) {
             )
             .join('');
         }
-
-        console.log(data);
       });
     search.value = '';
   } else {
@@ -74,7 +71,7 @@ function addMealToDom(meal) {
       break;
     }
   }
-  console.log(ingredients);
+
   single_mealEl.innerHTML = `
   <div class="single-meal">
     <h1>${meal.strMeal}</h1>
